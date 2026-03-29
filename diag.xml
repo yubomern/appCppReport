@@ -1,0 +1,154 @@
+<mxfile host="app.diagrams.net" modified="2026-03-29T15:00:00.000Z" agent="5.0 (Windows)" etag="xyz123" version="20.1.5" type="device">
+  <diagram id="coreDumpSeq" name="CoreDump Sequence">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Lifelines -->
+        <mxCell id="app" value="Application" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="coreManager" value="CoreDumpManager" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="40" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="platformUtils" value="PlatformUtils" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="coreData" value="CoreDumpData" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="40" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="factory" value="CrashExporterFactory" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="40" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="exporter" value="ICrashExporter" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="40" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fsystem" value="FileSystem" style="shape=rectangle;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="40" width="90" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Lifeline lines -->
+        <mxCell id="app_line" style="shape=line;strokeColor=#000000;strokeWidth=1;dashed=1;" edge="1" source="app" target="app" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="coreManager_line" style="shape=line;strokeColor=#000000;strokeWidth=1;dashed=1;" edge="1" source="coreManager" target="coreManager" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="platformUtils_line" style="shape=line;strokeColor=#000000;strokeWidth=1;dashed=1;" edge="1" source="platformUtils" target="platformUtils" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="coreData_line" style="shape=line;strokeColor=#000000;strokeWidth=1;dashed=1;" edge="1" source="coreData" target="coreData" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="factory_line" style="shape=line;strokeColor=#000000;strokeWidth=1;dashed=1;" edge="1" source="factory" target="factory" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="exporter_line" style="shape=line;strokeColor=#000000;strokeWidth=1;dashed=1;" edge="1" source="exporter" target="exporter" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fsystem_line" style="shape=line;strokeColor=#000000;strokeWidth=1;dashed=1;" edge="1" source="fsystem" target="fsystem" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Activation bar CoreDumpManager -->
+        <mxCell id="activation_coreManager" style="rounded=0;fillColor=#cce5ff;strokeColor=#007bff;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="80" width="30" height="180" as="geometry" />
+        </mxCell>
+        
+        <!-- Messages -->
+        <!-- Store -->
+        <mxCell id="msg1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=block;endFill=1;" edge="1" source="app" target="coreManager" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="90" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="Store(file, line)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="140" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        <!-- CaptureCallStack -->
+        <mxCell id="msg2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=block;endFill=1;" edge="1" source="coreManager" target="platformUtils" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="110" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="CaptureCallStack()" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="140" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        <!-- stackTrace -->
+        <mxCell id="msg3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=open;dashed=1;" edge="1" source="platformUtils" target="coreManager" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="130" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="stackTrace" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="100" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        <!-- setMetadata, setStackTrace -->
+        <mxCell id="msg4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=block;endFill=1;" edge="1" source="coreManager" target="coreData" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="160" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="setMetadata(), setStackTrace()" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="180" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        <!-- Analyze -->
+        <mxCell id="msg5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=block;endFill=1;" edge="1" source="coreManager" target="coreData" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="190" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="Analyze()" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="100" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        <!-- Export -->
+        <mxCell id="msg6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=block;endFill=1;" edge="1" source="app" target="coreManager" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="260" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="Export(format)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="120" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        <!-- Create -->
+        <mxCell id="msg7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=block;endFill=1;" edge="1" source="coreManager" target="factory" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="300" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="&lt;&lt;create&gt;&gt; Create(format)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="180" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        <!-- unique_ptr -->
+        <mxCell id="msg8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=open;dashed=1;" edge="1" source="factory" target="coreManager" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="330" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="unique_ptr&lt;ICrashExporter&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="180" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        <!-- Export call -->
+        <mxCell id="msg9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=block;endFill=1;" edge="1" source="coreManager" target="exporter" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="370" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="Export(data, path)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="140" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        <!-- Write file -->
+        <mxCell id="msg10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#000000;endArrow=block;endFill=1;" edge="1" source="exporter" target="fsystem" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="960" y="410" as="targetPoint" />
+          </mxGeometry>
+          <mxCell value="write file" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+            <mxGeometry x="0.5" y="0" width="90" height="20" as="geometry" relative="1" />
+          </mxCell>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

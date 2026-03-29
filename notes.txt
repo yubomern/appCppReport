@@ -1,0 +1,22 @@
+✔ Pas de bruit
+
+❌ CMake
+❌ détails internes inutiles
+❌ trop de variables
+
+1. Problèmes dans ton diagramme actuel
+
+👉 Ce que j’ai identifié :
+
+❌ Trop chargé
+Trop de phases + détails techniques
+Le jury va se perdre
+❌ Mélange de niveaux
+Build (CMake) ❌
+Runtime (crash) ❌
+Python + Web ❌
+➡️ Tout est mélangé dans un seul diagramme
+❌ Lisibilité faible
+Texte trop petit
+Trop de flèches longues
+Difficulté à suivre le flux principal
