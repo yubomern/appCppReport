@@ -1,0 +1,10 @@
+^C:\USERS\HP\DESKTOP\DIAGRAMS\BUILD\CMAKEFILES\1F03397A48F826BC15D74BD6E4B7328C\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/hp/Desktop/Diagrams -BC:/Users/hp/Desktop/Diagrams/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/hp/Desktop/Diagrams/build/CrashDumpAnalyzer.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

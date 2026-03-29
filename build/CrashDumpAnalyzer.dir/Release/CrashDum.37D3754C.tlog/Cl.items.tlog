@@ -1,0 +1,9 @@
+C:\Users\hp\Desktop\Diagrams\src\main.cpp;C:\Users\hp\Desktop\Diagrams\build\CrashDumpAnalyzer.dir\Release\main.obj
+C:\Users\hp\Desktop\Diagrams\src\CoreDumpManager.cpp;C:\Users\hp\Desktop\Diagrams\build\CrashDumpAnalyzer.dir\Release\CoreDumpManager.obj
+C:\Users\hp\Desktop\Diagrams\src\CoreDumpData.cpp;C:\Users\hp\Desktop\Diagrams\build\CrashDumpAnalyzer.dir\Release\CoreDumpData.obj
+C:\Users\hp\Desktop\Diagrams\src\SystemMetrics.cpp;C:\Users\hp\Desktop\Diagrams\build\CrashDumpAnalyzer.dir\Release\SystemMetrics.obj
+C:\Users\hp\Desktop\Diagrams\src\CrashAnalysis.cpp;C:\Users\hp\Desktop\Diagrams\build\CrashDumpAnalyzer.dir\Release\CrashAnalysis.obj
+C:\Users\hp\Desktop\Diagrams\src\PlatformUtils.cpp;C:\Users\hp\Desktop\Diagrams\build\CrashDumpAnalyzer.dir\Release\PlatformUtils.obj
+C:\Users\hp\Desktop\Diagrams\src\JsonCrashExporter.cpp;C:\Users\hp\Desktop\Diagrams\build\CrashDumpAnalyzer.dir\Release\JsonCrashExporter.obj
+C:\Users\hp\Desktop\Diagrams\src\CsvCrashExporter.cpp;C:\Users\hp\Desktop\Diagrams\build\CrashDumpAnalyzer.dir\Release\CsvCrashExporter.obj
+C:\Users\hp\Desktop\Diagrams\src\CrashExporterFactory.cpp;C:\Users\hp\Desktop\Diagrams\build\CrashDumpAnalyzer.dir\Release\CrashExporterFactory.obj
